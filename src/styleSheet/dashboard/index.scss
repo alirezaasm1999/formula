@@ -321,6 +321,9 @@
             align-content: stretch;
             min-height: 100px;
             // background-color: blue;
+            .label{
+              margin: 0 6px;
+            }
           }
           .formula {
             width: 100%;

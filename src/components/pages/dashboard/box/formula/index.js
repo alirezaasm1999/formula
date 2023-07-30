@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Label } from "../../../../commons";
 import WARNING from "./../../../../../assets/img/warning.png";
 import DELETE from "./../../../../../assets/img/delete.png";
@@ -7,13 +7,14 @@ import FX from "./../../../../../assets/img/fx.png";
 
 const Formula = () => {
   const [content, setContent] = useState([]);
+  const [formula, setFormula] = useState("");
 
   const handleDrop = (event) => {
     event.preventDefault();
-    const id = event.dataTransfer.getData("text/plain");
-    const label = document.getElementById(id);
-    if (label) {
-      setContent((prevContent) => [...prevContent, label.innerText]);
+    const labelPropsJSON = event.dataTransfer.getData("application/json");
+    const labelProps = JSON.parse(labelPropsJSON);
+    if (labelProps) {
+      setContent((prevContent) => [...prevContent, labelProps]);
     }
   };
 
@@ -21,9 +22,21 @@ const Formula = () => {
     event.preventDefault();
   };
 
-  const handleDragStart = (event, id) => {
-    event.dataTransfer.setData("text/plain", id);
+  const handleDragStart = (event, labelProps) => {
+    event.dataTransfer.setData("application/json", JSON.stringify(labelProps));
   };
+  const updateFormula = () => {
+    const formulaStr = content.reduce(
+      (acc, label) => acc + label.title + " ",
+      " "
+    );
+    setFormula(formulaStr);
+  };
+
+  useEffect(() => {
+    updateFormula();
+    // eslint-disable-next-line
+  }, [content, updateFormula]);
 
   return (
     <div className="dashboard__formula">
@@ -41,7 +54,9 @@ const Formula = () => {
                   key={index}
                   id={index}
                   draggable
-                  onDragStart={(e) => handleDragStart(e, index)}
+                  onDragStart={
+                    (e) => handleDragStart(e, { id: index, title: item }) // Removed the additional curly braces
+                  }
                 />
               );
             })}
@@ -55,28 +70,48 @@ const Formula = () => {
               className="purple"
               id="10"
               draggable
-              onDragStart={(e) => handleDragStart(e, "10")}
+              onDragStart={(e) =>
+                handleDragStart(e, {
+                  id: "10",
+                  className: "purple",
+                  title: "-",
+                })
+              }
             />
             <Label
               title={"+"}
               className="green"
               id="11"
               draggable
-              onDragStart={(e) => handleDragStart(e, "11")}
+              onDragStart={(e) =>
+                handleDragStart(e, { id: "11", className: "green", title: "+" })
+              }
             />
             <Label
               title={"("}
               className="yellow"
               id="12"
               draggable
-              onDragStart={(e) => handleDragStart(e, "12")}
+              onDragStart={(e) =>
+                handleDragStart(e, {
+                  id: "12",
+                  className: "yellow",
+                  title: "(",
+                })
+              }
             />
             <Label
               title={")"}
               className="yellow"
               id="13"
               draggable
-              onDragStart={(e) => handleDragStart(e, "13")}
+              onDragStart={(e) =>
+                handleDragStart(e, {
+                  id: "13",
+                  className: "yellow",
+                  title: ")",
+                })
+              }
             />
           </div>
           <p className="desc">نماد ها </p>
@@ -94,11 +129,11 @@ const Formula = () => {
               onDragOver={handleDragOver}
             >
               {content.map((item, index) => (
-                <Label title={item} key={index} />
+                <Label {...item} key={index} />
               ))}
             </div>
             <div className="formula">
-              <div>fsdfsdf</div>
+              <div id="formula">{formula}</div>
               <div>
                 <img src={EQUAL} alt="equal" className="equl" />
                 <img src={FX} alt="fx" />
