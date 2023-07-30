@@ -313,6 +313,14 @@
           }
           .dragable-content {
             width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            align-content: stretch;
+            min-height: 100px;
+            // background-color: blue;
           }
           .formula {
             width: 100%;
