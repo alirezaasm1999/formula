@@ -55,7 +55,7 @@ const Formula = () => {
                   id={index}
                   draggable
                   onDragStart={
-                    (e) => handleDragStart(e, { id: index, title: item }) // Removed the additional curly braces
+                    (e) => handleDragStart(e, { id: index, title: item }) 
                   }
                 />
               );
