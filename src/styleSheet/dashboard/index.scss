@@ -78,4 +78,39 @@
       }
     }
   }
+  @include __element(create-program) {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    align-content: stretch;
+    div {
+      margin-right: 16px;
+    }
+    p {
+      &.title {
+        color: #1a3163;
+        text-align: right;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 44px; 
+        text-transform: capitalize;
+        margin: 0 0;
+      }
+      &.description {
+        color: #64728d;
+        text-align: right;
+        font-family: IRANYekanX;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 32px;
+        text-transform: capitalize;
+        margin: 0 0;
+      }
+    }
+  }
 }
