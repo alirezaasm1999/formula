@@ -1,8 +1,9 @@
-import React, { Fragment } from "react";
+import React from "react";
+import Header from "./header";
 const Dashboard = () => {
   return (
     <div className="dashboard">
-        
+        <Header/>
     </div>
   );
 };

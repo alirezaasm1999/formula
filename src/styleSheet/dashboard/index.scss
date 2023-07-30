@@ -7,4 +7,75 @@
   background-image: url("./../../assets/img/background.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  padding: 0 32px;
+
+  @include __element(header) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: stretch;
+    width: 100%;
+    padding: 16px 0;
+    @include __element(name) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      align-content: stretch;
+      p {
+        font-family: Black Ops One;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 0;
+        margin-left: 16px;
+      }
+    }
+    @include __element(message) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      align-content: stretch;
+    }
+  }
+  @include __element(header-card) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+    border-radius: 50px;
+    position: relative;
+    &.light {
+      border: 1px solid #1df9bb;
+      box-shadow: 0px 3px 8px 0px rgba(29, 249, 187, 0.2) inset;
+    }
+    background: #ffffff;
+    height: 45px;
+    padding: 0 8px 0 16px;
+    p {
+      margin-right: 4px;
+      direction: rtl;
+      text-align: right;
+    }
+    &.left {
+      margin-right: 16px;
+    }
+    &.user {
+      position: absolute;
+    }
+    img {
+      &.diamond {
+        position: absolute;
+        right: -7px;
+      }
+    }
+  }
 }
