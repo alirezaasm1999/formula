@@ -122,7 +122,6 @@
     align-self: stretch;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.5);
-    // background-color: red;
     margin-top: 32px;
     @include __element(name) {
       width: 100%;
@@ -132,6 +131,82 @@
       justify-content: flex-start;
       align-items: flex-end;
       align-content: stretch;
+    }
+    @include __element(programs) {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: flex-end;
+      align-content: stretch;
+      width: 100%;
+    }
+    @include __element(program-wrapper) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      align-content: stretch;
+      width: fit-content;
+      margin-bottom: 8px;
+      .section {
+        width: 580px;
+        padding: 4px 16px 4px 9px;
+        border-radius: 5px;
+        border: 3px solid #e1e0e5;
+        background: #fff;
+        height: 37px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: stretch;
+        margin-right: 8px;
+        @include __element(rigth-section) {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: center;
+          align-items: center;
+          align-content: stretch;
+          width: fit-content;
+          .name {
+            color: #64728d;
+            text-align: right;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 21px;
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+    @include __element(program-labels) {
+      display: flex;
+      padding: 2px 10px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      height: 25px;
+      margin-left: 8px;
+      &.active {
+        background: linear-gradient(289deg, #25e750 0%, #abf44e 100%);
+      }
+      &.deactive {
+        background: linear-gradient(289deg, #e72548 0%, #f4bc4e 100%);
+      }
+      p {
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 21px;
+        text-transform: capitalize;
+      }
     }
   }
 }

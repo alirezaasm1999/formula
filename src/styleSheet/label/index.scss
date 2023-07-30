@@ -1,0 +1,22 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // gap: 10px;
+  border-radius: 4px;
+  border: 3px solid #1d59b3;
+  background: linear-gradient(180deg, #5ac8f6 0%, #26a7e7 100%);
+  width: 56px;
+  height: 41px;
+  // padding: 10px;
+
+  p {
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 21px;
+    text-transform: capitalize;
+  }
+}

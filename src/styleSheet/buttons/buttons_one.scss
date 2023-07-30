@@ -1,0 +1,17 @@
+.button_one {
+  display: flex;
+  padding: 0 16px;
+  height: 30px;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid #c70f1a;
+  background: #fcf2f6;
+  p {
+    color: #c70f1a;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 21px;
+    text-transform: capitalize;
+  }
+}
