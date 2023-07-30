@@ -5,7 +5,7 @@
   align-items: center;
   border-radius: 5px;
   border: 1px solid $red_one;
-  background: #fcf2f6;
+  background: $white_five;
   p {
     color: $red_one;
     font-size: 14px;
@@ -16,6 +16,7 @@
   }
   &.add {
     border: 1px solid $blue_one;
+    background-color: $white_one;
     p {
       color: $blue_one;
     }
