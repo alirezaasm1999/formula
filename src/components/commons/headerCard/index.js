@@ -1,6 +1,6 @@
 import React from "react";
 import DIAMOND from "../../../assets/img/diamond.png";
-export const HeaderCard = ({ title, img, className = "", diamond = false }) => {
+const HeaderCard = ({ title, img, className = "", diamond = false }) => {
   return (
     <div className={`dashboard__header-card ${className}`}>
       <p>{title}</p>
@@ -9,3 +9,5 @@ export const HeaderCard = ({ title, img, className = "", diamond = false }) => {
     </div>
   );
 };
+
+export default HeaderCard;

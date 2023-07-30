@@ -2,7 +2,7 @@ import React from "react";
 import ROBO from "../../../../assets/img/robo.png";
 import MESSAGE from "../../../../assets/img/message.png";
 import USER from "../../../../assets/img/user.png";
-import { HeaderCard } from "../../../commons/headerCard";
+import {HeaderCard} from "../../../commons";
 import Functions from "../../../../utils/Functions";
 const Header = () => {
   return (

@@ -1,0 +1,28 @@
+.title_line {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: baseline;
+  align-content: stretch;
+  margin: 16px 0;
+  p {
+    color: #64728d;
+    text-align: right;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    text-transform: capitalize;
+    white-space: nowrap;
+  }
+  @include __element(line) {
+    border-radius: 10px;
+    background: #ededed;
+    box-shadow: 0px 3px 4px 0px rgba(172, 172, 172, 0.25) inset;
+    width: 100%;
+    height: 2px;
+    margin-right: 16px;
+  }
+}
