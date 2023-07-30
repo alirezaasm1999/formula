@@ -5,12 +5,12 @@
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  border: 1px solid #2534f1;
-  background: #f2f2fc;
+  border: 1px solid $blue_one;
+  background: $white_one;
   height: 37px;
 
   p {
-    color: #2534f1;
+    color: $blue_one;
     text-align: center;
     font-size: 16px;
     font-style: normal;

@@ -54,10 +54,10 @@
     border-radius: 50px;
     position: relative;
     &.light {
-      border: 1px solid #1df9bb;
-      box-shadow: 0px 3px 8px 0px rgba(29, 249, 187, 0.2) inset;
+      border: 1px solid $green_one;
+      box-shadow: 0px 3px 8px 0px $green_two inset;
     }
-    background: #ffffff;
+    background: $white;
     height: 45px;
     padding: 0 8px 0 16px;
     p {
@@ -91,7 +91,7 @@
     }
     p {
       &.title {
-        color: #1a3163;
+        color: $blue_two;
         text-align: right;
         font-size: 18px;
         font-style: normal;
@@ -101,7 +101,7 @@
         margin: 0 0;
       }
       &.description {
-        color: #64728d;
+        color: $gray_one;
         text-align: right;
         font-family: IRANYekanX;
         font-size: 16px;
@@ -154,8 +154,8 @@
         width: 580px;
         padding: 4px 16px 4px 9px;
         border-radius: 5px;
-        border: 3px solid #e1e0e5;
-        background: #fff;
+        border: 3px solid $white_two;
+        background: $white_one;
         height: 37px;
         display: flex;
         flex-direction: row;
@@ -173,7 +173,7 @@
           align-content: stretch;
           width: fit-content;
           .name {
-            color: #64728d;
+            color: $gray_one;
             text-align: right;
             font-size: 14px;
             font-style: normal;
@@ -193,13 +193,13 @@
       height: 25px;
       margin-left: 8px;
       &.active {
-        background: linear-gradient(289deg, #25e750 0%, #abf44e 100%);
+        background: $linear_one;
       }
       &.deactive {
-        background: linear-gradient(289deg, #e72548 0%, #f4bc4e 100%);
+        background: $linear_two;
       }
       p {
-        color: #fff;
+        color: $white;
         text-align: center;
         font-size: 16px;
         font-style: normal;
@@ -213,8 +213,8 @@
     width: 345px;
     padding: 4px 16px 4px 9px;
     border-radius: 5px;
-    border: 3px solid #e1e0e5;
-    background: #fff;
+    border: 3px solid $white_two;
+    background: $white;
     height: 37px;
     display: flex;
     flex-direction: row;
@@ -238,7 +238,7 @@
       align-items: flex-start;
       align-content: stretch;
       p {
-        color: #232323;
+        color: $black_one;
         text-align: right;
         font-size: 16px;
         font-style: normal;
@@ -260,8 +260,8 @@
       align-items: flex-end;
       gap: 16px;
       border-radius: 8px;
-      border: 1px solid #e1e0e5;
-      background: #f4f7fb;
+      border: 1px solid $white_two;
+      background: $white_three;
       margin-top: 16px;
       .cloning {
         display: flex;
@@ -272,7 +272,7 @@
         align-content: stretch;
         width: 100%;
         .desc {
-          color: #232323;
+          color: $black_one;
           text-align: right;
           font-size: 16px;
           font-style: normal;
@@ -289,7 +289,7 @@
         align-items: center;
         gap: 12px;
         border-radius: 4px;
-        background: #ededed;
+        background: $white_four;
         box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.15) inset;
         width: 100%;
         margin-right: 8px;
