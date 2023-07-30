@@ -14,4 +14,10 @@
     line-height: 21px;
     text-transform: capitalize;
   }
+  &.add {
+    border: 1px solid #2534f1;
+    p {
+      color: #2534f1;
+    }
+  }
 }
