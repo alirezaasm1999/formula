@@ -2,12 +2,12 @@
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 0;
   left: 0;
   background-image: url("./../../assets/img/background.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   padding: 0 32px;
+  padding-bottom: 300px;
 
   @include __element(header) {
     display: flex;
@@ -222,5 +222,123 @@
     justify-content: space-between;
     align-items: center;
     align-content: stretch;
+  }
+  @include __element(formula) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    align-content: stretch;
+    @include __element(title) {
+      display: flex;
+      flex-direction: row-reverse;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      align-content: stretch;
+      p {
+        color: #232323;
+        text-align: right;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 32px;
+        text-transform: capitalize;
+        margin: 0;
+      }
+      img {
+        margin-left: 16px;
+      }
+    }
+    @include __element(parent) {
+      display: flex;
+      min-width: 900px;
+      padding: 16px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 16px;
+      border-radius: 8px;
+      border: 1px solid #e1e0e5;
+      background: #f4f7fb;
+      margin-top: 16px;
+      .cloning {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-items: center;
+        align-content: stretch;
+        width: 100%;
+        .desc {
+          color: #232323;
+          text-align: right;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 32px;
+          text-transform: capitalize;
+          white-space: nowrap;
+        }
+      }
+      .drag-wrapper {
+        display: flex;
+        padding: 16px;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 12px;
+        border-radius: 4px;
+        background: #ededed;
+        box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.15) inset;
+        width: 100%;
+        margin-right: 8px;
+        &.third {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: nowrap;
+          justify-content: center;
+          align-items: center;
+          align-content: stretch;
+          .title {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            align-content: stretch;
+            width: 100%;
+            direction: rtl;
+            text-align: right;
+          }
+          .dragable-content {
+            width: 100%;
+          }
+          .formula {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+            align-items: center;
+            align-content: stretch;
+            img {
+              &.equl {
+                margin: 0 8px 3px 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @include __element(buttons) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: stretch;
+    width: 100%;
   }
 }

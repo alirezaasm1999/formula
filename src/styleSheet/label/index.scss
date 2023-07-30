@@ -3,13 +3,28 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // gap: 10px;
   border-radius: 4px;
   border: 3px solid #1d59b3;
   background: linear-gradient(180deg, #5ac8f6 0%, #26a7e7 100%);
   width: 56px;
   height: 41px;
-  // padding: 10px;
+  color: #1d59b3;
+
+  &.purple {
+    color: #b12fa5;
+    border: 3px solid #b12fa5;
+    background: linear-gradient(180deg, #f9b0f8 0%, #d14fc5 100%);
+  }
+  &.green {
+    color: #138c08;
+    border: 3px solid #138c08;
+    background: linear-gradient(180deg, #81f66e 0%, #35b829 100%);
+  }
+  &.yellow {
+    color: #aa5c00;
+    border: 3px solid #aa5c00;
+    background: linear-gradient(180deg, #f6df5a 0%, #e78b27 100%);
+  }
 
   p {
     text-align: center;

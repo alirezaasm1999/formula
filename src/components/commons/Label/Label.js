@@ -1,8 +1,8 @@
 import React from "react";
 
-const Label = ({ LabelComponent, title="", wrapStyle, titleStyle, ...props }) => {
+const Label = ({ LabelComponent, title="", wrapStyle, titleStyle,className, ...props }) => {
   return (
-    <div className="label" style={{ ...wrapStyle }}>
+    <div className={`label ${className}`} style={{ ...wrapStyle }}>
       {LabelComponent ? <LabelComponent /> : <p style={{ ...titleStyle }}>{title}</p>}
     </div>
   );
