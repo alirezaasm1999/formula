@@ -72,19 +72,19 @@ const Formula = () => {
   const handleDragStart = (event, labelProps) => {
     event.dataTransfer.setData("application/json", JSON.stringify(labelProps));
   };
-  const updateFormula = () => {
-    const formulaStr = content.reduce(
-      (acc, label) => acc + label.title + " ",
-      " "
-    );
-    setFormula(formulaStr);
-  };
+
 
   const clearContent = () => {
     setContent([]);
   };
-
   useEffect(() => {
+    const updateFormula = () => {
+      const formulaStr = content.reduce(
+        (acc, label) => acc + label.title + " ",
+        " "
+      );
+      setFormula(formulaStr);
+    };
     updateFormula();
     // eslint-disable-next-line
   }, [content, updateFormula]);
