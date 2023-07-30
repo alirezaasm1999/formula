@@ -9,6 +9,53 @@ const Formula = () => {
   const [content, setContent] = useState([]);
   const [formula, setFormula] = useState("");
 
+  const symbelList = [
+    {
+      title: "-",
+      className: "purple",
+      id: "10",
+      onDragStart: (e) =>
+        handleDragStart(e, {
+          id: "10",
+          className: "purple",
+          title: "-",
+        }),
+    },
+    {
+      title: "+",
+      className: "green",
+      id: "11",
+      onDragStart: (e) =>
+        handleDragStart(e, {
+          id: "11",
+          className: "green",
+          title: "+",
+        }),
+    },
+    {
+      title: "(",
+      className: "yellow",
+      id: "12",
+      onDragStart: (e) =>
+        handleDragStart(e, {
+          id: "12",
+          className: "yellow",
+          title: "(",
+        }),
+    },
+    {
+      title: ")",
+      className: "yellow",
+      id: "13",
+      onDragStart: (e) =>
+        handleDragStart(e, {
+          id: "13",
+          className: "yellow",
+          title: ")",
+        }),
+    },
+  ];
+
   const handleDrop = (event) => {
     event.preventDefault();
     const labelPropsJSON = event.dataTransfer.getData("application/json");
@@ -33,6 +80,10 @@ const Formula = () => {
     setFormula(formulaStr);
   };
 
+  const clearContent = () => {
+    setContent([]);
+  };
+
   useEffect(() => {
     updateFormula();
     // eslint-disable-next-line
@@ -54,8 +105,8 @@ const Formula = () => {
                   key={index}
                   id={index}
                   draggable
-                  onDragStart={
-                    (e) => handleDragStart(e, { id: index, title: item }) 
+                  onDragStart={(e) =>
+                    handleDragStart(e, { id: index, title: item })
                   }
                 />
               );
@@ -65,54 +116,9 @@ const Formula = () => {
         </div>
         <div className="cloning">
           <div className="drag-wrapper" id="symbels">
-            <Label
-              title={"-"}
-              className="purple"
-              id="10"
-              draggable
-              onDragStart={(e) =>
-                handleDragStart(e, {
-                  id: "10",
-                  className: "purple",
-                  title: "-",
-                })
-              }
-            />
-            <Label
-              title={"+"}
-              className="green"
-              id="11"
-              draggable
-              onDragStart={(e) =>
-                handleDragStart(e, { id: "11", className: "green", title: "+" })
-              }
-            />
-            <Label
-              title={"("}
-              className="yellow"
-              id="12"
-              draggable
-              onDragStart={(e) =>
-                handleDragStart(e, {
-                  id: "12",
-                  className: "yellow",
-                  title: "(",
-                })
-              }
-            />
-            <Label
-              title={")"}
-              className="yellow"
-              id="13"
-              draggable
-              onDragStart={(e) =>
-                handleDragStart(e, {
-                  id: "13",
-                  className: "yellow",
-                  title: ")",
-                })
-              }
-            />
+            {symbelList.map((item, index) => {
+              return <Label draggable {...item} key={index} />;
+            })}
           </div>
           <p className="desc">نماد ها </p>
         </div>
@@ -120,7 +126,7 @@ const Formula = () => {
           <div className="drag-wrapper third">
             <div className="title">
               <p>لطفا فرمول مورد نظر را به روش drag & drop بسازید</p>
-              <img src={DELETE} alt="delete" />
+              <img src={DELETE} alt="delete" onClick={clearContent} />
             </div>
             <div
               className="dragable-content"
