@@ -87,7 +87,7 @@ const Formula = () => {
     };
     updateFormula();
     // eslint-disable-next-line
-  }, [content, updateFormula]);
+  }, [content]);
 
   return (
     <div className="dashboard__formula">
